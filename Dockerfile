@@ -4,7 +4,6 @@ ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1
 
 RUN npm install -g pnpm
 
-
 FROM base AS builder
 
 RUN addgroup --system --gid 1001 builder && \
