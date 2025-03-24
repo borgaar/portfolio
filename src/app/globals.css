@@ -1,22 +1,15 @@
 @import "tailwindcss";
+@plugin "tailwind-scrollbar";
 
 :root {
+  --background: #0d0d0d;
   --foreground: #ffffff;
-  --background: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* --color-secondary: #282828; */
   --color-secondary: #0d0d0d;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0d0d0d;
-    --foreground: #ffffff;
-  }
 }
 
 body {
