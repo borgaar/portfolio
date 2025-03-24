@@ -4,7 +4,13 @@ ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1
 
 RUN npm install -g pnpm
 
+
 FROM base AS builder
+
+RUN addgroup --system --gid 1001 builder && \
+    adduser --system --uid 1001 builder
+
+USER builder
 
 WORKDIR /build
 
@@ -16,17 +22,18 @@ RUN pnpm build
 
 FROM base AS runner
 
-WORKDIR /app
-
 RUN addgroup --system --gid 1001 runner && \
-    adduser --system --uid 1001 runner && \
-    chown -R runner:runner /app
+    adduser --system --uid 1001 runner
+
 USER runner
 
-COPY --from=builder --chown=runner:runner /build/node_modules node_modules
-COPY --from=builder --chown=runner:runner /build/.next .next
-COPY --from=builder --chown=runner:runner /build/public public
-COPY --from=builder --chown=runner:runner /build/package.json .
+WORKDIR /app
+
+COPY --from=builder --chown=1001:1001 /build/node_modules node_modules
+COPY --from=builder --chown=1001:1001 /build/.next .next
+COPY --from=builder --chown=1001:1001 /build/public public
+COPY --from=builder --chown=1001:1001 /build/package.json .
+COPY --from=builder --chown=1001:1001 /build/next.config.ts .
 
 EXPOSE 3000
 
