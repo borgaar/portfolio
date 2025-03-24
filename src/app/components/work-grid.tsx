@@ -8,16 +8,14 @@ export default function WorkGrid() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    window.addEventListener("scroll", () => setIsVisible(true));
     setTimeout(() => {
       setIsVisible(true);
-    }, 800);
+    }, 7000);
   }, []);
 
   return (
     <PageContainer>
-      {/* <div className="flex justify-center my-10 text-3xl">
-        Stuff I do or did
-      </div> */}
       <div
         className={`grid px-4 duration-[1500ms] transition-opacity ${
           isVisible ? "opacity-100" : "opacity-0"

@@ -12,7 +12,7 @@ export default function WorkCard({
     <a
       href={href}
       target="_blank"
-      className="flex flex-col h-full bg-neutral-800 lg:bg-transparent rounded-lg shadow-lg transition-all hover:scale-[1.04] hover:shadow-xl hover:z-20 relative group"
+      className="flex flex-col h-full bg-neutral-800 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
       <div className="relative w-full h-64">
         <div className="absolute inset-0 bg-transparent lg:bg-black/40 z-10 rounded-lg transition-opacity opacity-100 group-hover:opacity-0" />
