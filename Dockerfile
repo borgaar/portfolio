@@ -6,14 +6,15 @@ RUN npm install -g pnpm
 
 FROM base AS builder
 
+WORKDIR /build
+
 RUN addgroup --system --gid 1001 builder && \
-    adduser --system --uid 1001 builder
+    adduser --system --uid 1001 builder && \
+    chown -R 1001:1001 /build
 
 USER builder
 
-WORKDIR /build
-
-COPY . .
+COPY --chown=1001:1001 . .
 
 RUN pnpm i --frozen-lockfile
 
@@ -21,12 +22,13 @@ RUN pnpm build
 
 FROM base AS runner
 
+WORKDIR /app
+
 RUN addgroup --system --gid 1001 runner && \
-    adduser --system --uid 1001 runner
+    adduser --system --uid 1001 runner && \
+    chown -R 1001:1001 /app
 
 USER runner
-
-WORKDIR /app
 
 COPY --from=builder --chown=1001:1001 /build/node_modules node_modules
 COPY --from=builder --chown=1001:1001 /build/.next .next
