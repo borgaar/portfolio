@@ -18,15 +18,15 @@ FROM base AS runner
 
 WORKDIR /app
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs && \
-    chown -R nextjs:nodejs /app
-USER nextjs
+RUN addgroup --system --gid 1001 runner && \
+    adduser --system --uid 1001 runner && \
+    chown -R runner:runner /app
+USER runner
 
-COPY --from=builder /build/node_modules node_modules
-COPY --from=builder /build/.next .next
-COPY --from=builder /build/public public
-COPY --from=builder /build/package.json .
+COPY --from=builder --chown=runner:runner /build/node_modules node_modules
+COPY --from=builder --chown=runner:runner /build/.next .next
+COPY --from=builder --chown=runner:runner /build/public public
+COPY --from=builder --chown=runner:runner /build/package.json .
 
 EXPOSE 3000
 
