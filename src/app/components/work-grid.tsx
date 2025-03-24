@@ -9,15 +9,12 @@ export default function WorkGrid() {
 
   useEffect(() => {
     window.addEventListener("scroll", () => setIsVisible(true));
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 7000);
   }, []);
 
   return (
     <PageContainer>
       <div
-        className={`grid px-4 duration-[1500ms] transition-opacity ${
+        className={`grid px-4 pt-10 duration-[1500ms] transition-opacity ${
           isVisible ? "opacity-100" : "opacity-0"
         } md:grid-cols-2 grid-cols-1 h-min mb-8 gap-8 lg:gap-4`}
       >
