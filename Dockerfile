@@ -36,6 +36,8 @@ COPY --from=builder --chown=1001:1001 /build/public public
 COPY --from=builder --chown=1001:1001 /build/package.json .
 COPY --from=builder --chown=1001:1001 /build/next.config.ts .
 
-EXPOSE 3000
+ENV PORT=8080
+
+EXPOSE 8080
 
 CMD ["pnpm", "start"]
