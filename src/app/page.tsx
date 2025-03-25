@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Hero from "./components/hero";
 import Me from "./components/me";
 import WorkGrid from "./components/work-grid";
+import { HERO_ANIMATION_DURATION } from "./lib/constants";
 
 export default function Home() {
   const workSectionRef = useRef<HTMLDivElement>(null);
@@ -14,7 +15,7 @@ export default function Home() {
     window.addEventListener("scroll", () => setIsVisible(true));
     setTimeout(() => {
       setIsVisible(true);
-    }, 10000);
+    }, HERO_ANIMATION_DURATION);
   }, []);
 
   const scrollToWork = (e: { preventDefault: () => void }) => {

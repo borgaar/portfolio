@@ -12,6 +12,7 @@ export default function WorkCard({
     <a
       href={href}
       target="_blank"
+      rel="noopener noreferrer"
       className="flex flex-col h-full bg-neutral-900 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
       <div className="relative w-full h-64">

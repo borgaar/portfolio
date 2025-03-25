@@ -1,0 +1,1 @@
+export const HERO_ANIMATION_DURATION = 10000;

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import PageContainer from "./page-container";
 import { useEffect, useState } from "react";
+import { HERO_ANIMATION_DURATION } from "../lib/constants";
 
 export default function Me() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +15,7 @@ export default function Me() {
     });
     setTimeout(() => {
       doAnimations();
-    }, 10000);
+    }, HERO_ANIMATION_DURATION);
   }, []);
 
   const doAnimations = async () => {
@@ -34,6 +35,7 @@ export default function Me() {
       <a
         href="https://www.linkedin.com/in/borgar-barland-1096b7303/"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <div className="relative group overflow-hidden">
           <div className="absolute h-full w-full border-b-2 border-red-300 bg-gradient-to-t z-10 from-red-500/10 via-transparent via-10% to-transparent " />

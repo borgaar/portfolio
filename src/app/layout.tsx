@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -18,8 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scrollbar-none">
-      <body className={`${robotoMono.className} antialiased`}>{children}</body>
+    <html lang="en" className="relative scrollbar-none">
+      <body className={`${robotoMono.className} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
