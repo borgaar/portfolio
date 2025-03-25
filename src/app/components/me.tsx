@@ -38,11 +38,11 @@ export default function Me() {
         rel="noopener noreferrer"
       >
         <div className="relative group overflow-hidden">
-          <div className="absolute h-full w-full border-b-2 border-white bg-gradient-to-t z-10 from-neutral-500/10 via-transparent via-10% to-transparent " />
+          <div className="absolute h-full w-full border-b-2 border-white bg-gradient-to-t z-10 from-neutral-300/10 via-transparent via-5% to-transparent " />
           <Image
             className={`${
               slideUp || "translate-y-400"
-            } duration-1000 group-hover:duration-200 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
+            } duration-1000 group-hover:duration-400 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
             src={"/me.png"}
             height={400}
             width={400}
