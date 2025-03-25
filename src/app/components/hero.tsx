@@ -16,14 +16,14 @@ export default function Hero() {
       setPutInPlace(true);
       await new Promise((resolve) => setTimeout(resolve, 500));
       setShowEmail(true);
-    }, 9000);
+    }, 9500);
   }, []);
 
   return (
     <div
       className={`flex ${
         putInPlace || "translate-y-[30vh]"
-      } flex-col items-center duration-500 transition-transform justify-center pt-20 lg:pt-40 bg-secondary text-xl lg:text-4xl text-neutral-200`}
+      } flex-col items-center duration-600 transition-transform justify-center pt-20 lg:pt-40 bg-secondary text-xl lg:text-4xl text-neutral-200`}
     >
       <PageContainer>
         <ReactTyped
@@ -36,7 +36,7 @@ export default function Hero() {
           ]}
           typeSpeed={15}
           backSpeed={10}
-          startDelay={1000}
+          startDelay={500}
           backDelay={1000}
           smartBackspace={true}
           cursorChar="_"
@@ -46,7 +46,7 @@ export default function Hero() {
           href="mailto:borgar@texicon.no"
           className={`${
             showEmail ? "opacity-100" : "opacity-0"
-          } opacity-0 text-neutral-500 hover:text-neutral-200 duration-150 hover:scale-[1.02] text-sm pt-6 flex justify-center`}
+          } opacity-0 text-neutral-500 hover:text-neutral-200 duration-1000 hover:scale-[1.02] text-sm pt-6 flex justify-center`}
         >
           borgar@texicon.no
         </a>

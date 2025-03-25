@@ -14,7 +14,7 @@ export default function Home() {
     window.addEventListener("scroll", () => setIsVisible(true));
     setTimeout(() => {
       setIsVisible(true);
-    }, 9500);
+    }, 10000);
   }, []);
 
   const scrollToWork = (e: { preventDefault: () => void }) => {
@@ -39,9 +39,9 @@ export default function Home() {
           onClick={scrollToWork}
           className={`flex pb-8 ${
             isVisible ? "opacity-100" : "opacity-0"
-          } text-neutral-700 lg:text-neutral-800 justify-center duration-500 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
+          } text-neutral-700 lg:text-neutral-800 justify-center duration-1000 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
         >
-          psst! more stuff down here
+          psst! more stuff down here..
         </button>
       </div>
       <div id="work" ref={workSectionRef}>
