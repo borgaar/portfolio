@@ -38,7 +38,7 @@ export default function Me() {
         rel="noopener noreferrer"
       >
         <div className="relative group overflow-hidden">
-          <div className="absolute h-full w-full border-b-2 border-red-300 bg-gradient-to-t z-10 from-red-500/10 via-transparent via-10% to-transparent " />
+          <div className="absolute h-full w-full border-b-2 border-white bg-gradient-to-t z-10 from-neutral-500/10 via-transparent via-10% to-transparent " />
           <Image
             className={`${
               slideUp || "translate-y-400"
