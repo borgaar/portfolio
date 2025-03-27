@@ -1,8 +1,8 @@
-"use client";
-import Image from "next/image";
-import PageContainer from "./page-container";
-import { useEffect, useState } from "react";
-import { HERO_ANIMATION_DURATION } from "../lib/constants";
+'use client';
+import Image from 'next/image';
+import PageContainer from './page-container';
+import { useEffect, useState } from 'react';
+import { HERO_ANIMATION_DURATION } from '../lib/constants';
 
 export default function Me() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,7 @@ export default function Me() {
   const [showClickMe, setShowClickMe] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       doAnimations();
     });
     setTimeout(() => {
@@ -29,7 +29,7 @@ export default function Me() {
   return (
     <div
       className={`flex flex-col items-center justify-center transition-opacity ${
-        isVisible ? "opacity-100" : "opacity-0"
+        isVisible ? 'opacity-100' : 'opacity-0'
       } duration-[1500ms]`}
     >
       <a
@@ -41,16 +41,16 @@ export default function Me() {
           <div className="absolute h-full w-full border-b-2 border-white bg-gradient-to-t z-10 from-neutral-300/10 via-transparent via-5% to-transparent " />
           <Image
             className={`${
-              slideUp || "translate-y-400"
+              slideUp || 'translate-y-400'
             } duration-1000 group-hover:duration-400 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
-            src={"/me.png"}
+            src={'/me.png'}
             height={400}
             width={400}
             alt="A photo of one handsome devil should right here"
           />
           <div
             className={`pt-5 ${
-              showClickMe ? "opacity-100" : "opacity-0"
+              showClickMe ? 'opacity-100' : 'opacity-0'
             } absolute top-[63%] right-[6%] text-center group-hover:opacity-0 transition-opacity duration-600 text-neutral-700 md:text-neutral-800 text-sm lg:text-lg`}
           >
             Click me!
@@ -66,7 +66,7 @@ export default function Me() {
           perfection in my work.
           <br />
           With true passion for creation through code, I am always learning and
-          developing, staying ready for the next challenge.{" "}
+          developing, staying ready for the next challenge.{' '}
           <span className="text-neutral-700">*/</span>
         </i>
       </div>

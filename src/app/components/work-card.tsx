@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { LinkCardProps } from "../lib/work";
+import Image from 'next/image';
+import { LinkCardProps } from '../lib/work';
 
 export default function WorkCard({
   image,

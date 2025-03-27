@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import Hero from "./components/hero";
-import Me from "./components/me";
-import WorkGrid from "./components/work-grid";
-import { HERO_ANIMATION_DURATION } from "./lib/constants";
+import { useEffect, useRef, useState } from 'react';
+import Hero from './components/hero';
+import Me from './components/me';
+import WorkGrid from './components/work-grid';
+import { HERO_ANIMATION_DURATION } from './lib/constants';
 
 export default function Home() {
   const workSectionRef = useRef<HTMLDivElement>(null);
@@ -12,7 +12,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => setIsVisible(true));
+    window.addEventListener('scroll', () => setIsVisible(true));
     setTimeout(() => {
       setIsVisible(true);
     }, HERO_ANIMATION_DURATION);
@@ -23,8 +23,8 @@ export default function Home() {
 
     if (workSectionRef.current) {
       workSectionRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+        behavior: 'smooth',
+        block: 'start',
       });
     }
   };
@@ -39,7 +39,7 @@ export default function Home() {
         <button
           onClick={scrollToWork}
           className={`flex pb-8 ${
-            isVisible ? "opacity-100" : "opacity-0"
+            isVisible ? 'opacity-100' : 'opacity-0'
           } text-neutral-700 lg:text-neutral-800 justify-center duration-1000 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
         >
           psst! more stuff down here..
