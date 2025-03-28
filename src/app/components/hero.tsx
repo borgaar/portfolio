@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import PageContainer from './page-container';
 import { ReactTyped } from 'react-typed';
+import { HERO_ANIMATION_DURATION } from '../lib/constants';
 
 export default function Hero() {
   const [putInPlace, setPutInPlace] = useState(false);
@@ -16,7 +17,7 @@ export default function Hero() {
       setPutInPlace(true);
       await new Promise((resolve) => setTimeout(resolve, 500));
       setShowEmail(true);
-    }, 9500);
+    }, HERO_ANIMATION_DURATION + 950);
   }, []);
 
   return (
@@ -31,8 +32,7 @@ export default function Hero() {
             'Hi!',
             'My name is Borgar Barland,',
             'and I\'m a software developer.',
-            'If you have any questions,',
-            'feel free to reach out.',
+            'feel free to reach out!',
           ]}
           typeSpeed={15}
           backSpeed={10}

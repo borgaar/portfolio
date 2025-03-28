@@ -42,7 +42,7 @@ export default function Me() {
           <Image
             className={`${
               slideUp || 'translate-y-400'
-            } duration-1000 group-hover:duration-400 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
+            } duration-1000 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
             src={'/me.png'}
             height={400}
             width={400}
