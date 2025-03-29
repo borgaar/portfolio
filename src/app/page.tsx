@@ -38,9 +38,8 @@ export default function Home() {
         </div>
         <button
           onClick={scrollToWork}
-          className={`flex pb-8 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          } text-neutral-700 lg:text-neutral-800 justify-center duration-1000 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
+          className={`flex pb-8 ${isVisible ? 'opacity-100' : 'opacity-0'
+            } text-neutral-700 lg:text-neutral-800 justify-center duration-1000 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
         >
           psst! more stuff down here..
         </button>

@@ -1,5 +1,5 @@
 'use client';
-import { work } from '../lib/work';
+import { workData } from '../lib/work-data';
 import WorkCard from './work-card';
 import PageContainer from './page-container';
 import { useEffect, useState } from 'react';
@@ -18,8 +18,8 @@ export default function WorkGrid() {
           isVisible ? 'opacity-100' : 'opacity-0'
         } md:grid-cols-2 grid-cols-1 h-min mb-8 gap-8 lg:gap-4`}
       >
-        {work.map((work, index) => (
-          <WorkCard key={index} {...work} />
+        {workData.map((work, index) => (
+          <WorkCard key={index} index={index} {...work} />
         ))}
       </div>
     </PageContainer>

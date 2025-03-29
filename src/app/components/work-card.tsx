@@ -1,17 +1,16 @@
 import Image from 'next/image';
-import { LinkCardProps } from '../lib/work';
+import { LinkCardProps } from '../lib/work-data';
 
 export default function WorkCard({
   image,
   title,
-  description,
-  href,
+  shortDesc: description,
   lastUpdated,
-}: Readonly<LinkCardProps>) {
+  index,
+}: Readonly<LinkCardProps> & {index: number}) {
   return (
     <a
-      href={href}
-      target="_blank"
+      href={'/articles/' + index}
       rel="noopener noreferrer"
       className="flex flex-col h-full bg-neutral-900 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
