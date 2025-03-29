@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
-import PageContainer from './page-container';
 import { useEffect, useState } from 'react';
-import { HERO_ANIMATION_DURATION } from '../lib/constants';
+import { animationStream, triggerStream } from './hero';
+import { ANIMATION_DELAY } from '../lib/constants';
 
 export default function Me() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,20 +11,25 @@ export default function Me() {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      doAnimations();
+      handleStream();
     });
-    setTimeout(() => {
-      doAnimations();
-    }, HERO_ANIMATION_DURATION);
-  }, []);
 
-  const doAnimations = async () => {
-    setIsVisible(true);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setSlideUp(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setShowClickMe(true);
-  };
+    const handleStream = async () => {
+      for await (const trigger of animationStream()) {
+        if (trigger === 'IMAGE') {
+          setSlideUp(true);
+        } else if (trigger === 'CLICK_ME') {
+          setShowClickMe(true);
+        } else if (trigger === 'ME_ELEMENT') {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    setTimeout(() => {
+      handleStream();
+    }, ANIMATION_DELAY);
+  }, []);
 
   return (
     <div

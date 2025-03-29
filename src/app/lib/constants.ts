@@ -1,1 +1,1 @@
-export const HERO_ANIMATION_DURATION = 7500;
+export const ANIMATION_DELAY = 7500;
