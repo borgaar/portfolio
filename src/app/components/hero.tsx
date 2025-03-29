@@ -45,7 +45,7 @@ export default function Hero() {
 
   return (
     <div
-      className={`flex ${putInPlace || 'translate-y-[30vh]'} flex-col items-center duration-600 transition-transform justify-center pt-20 lg:pt-40 bg-secondary text-xl lg:text-4xl text-neutral-200`}
+      className={`flex ${putInPlace || 'translate-y-[30vh]'} flex-col items-center duration-600 transition-transform justify-center pt-20 lg:pt-24 bg-secondary text-xl lg:text-4xl text-neutral-200`}
     >
       <PageContainer>
         <ReactTyped
