@@ -3,7 +3,10 @@ export interface LinkCardProps {
   title: string;
   altTitle?: string;
   shortDesc: string;
-  body: string[];
+  chapters: {
+    title?: string;
+    content: string[];
+  }[];
   href: string;
   lastUpdated: Date;
 }
@@ -12,13 +15,22 @@ export const workData: LinkCardProps[] = [
   {
     image: '/work/texicon.png',
     title: 'Texicon AS',
-    altTitle: 'Building a company from the ground up',
+    altTitle: '/* building a company from the ground up */',
     shortDesc:
       'An IT-consulting company I co-founded at the start of 2024. We have since gained considerable momentum, and we have completed multiple projects for various clients ranging from websites and apps, to designs and general IT-support, and there are no plans of stopping there.',
-    body: [
-      'Texicon AS is a Norwegian IT-consulting company that specializes in providing a wide range of IT services to clients. Founded in 2024, Texicon has quickly gained a reputation for delivering high-quality solutions tailored to meet the unique needs of its clients. The company offers services such as web development, app development, design, and general IT support. With a focus on innovation and customer satisfaction, Texicon is committed to helping businesses leverage technology to achieve their goals.',
-      'Texicon AS is a Norwegian IT-consulting company that specializes in providing a wide range of IT services to clients. Founded in 2024, Texicon has quickly gained a reputation for delivering high-quality solutions tailored to meet the unique needs of its clients. The company offers services such as web development, app development, design, and general IT support. With a focus on innovation and customer satisfaction, Texicon is committed to helping businesses leverage technology to achieve their goals.',
-      'Texicon AS is a Norwegian IT-consulting company that specializes in providing a wide range of IT services to clients. Founded in 2024, Texicon has quickly gained a reputation for delivering high-quality solutions tailored to meet the unique needs of its clients. The company offers services such as web development, app development, design, and general IT support. With a focus on innovation and customer satisfaction, Texicon is committed to helping businesses leverage technology to achieve their goals.',
+    chapters: [
+      {
+        content: [
+          'Texicon AS is the IT-consulting company I co-founded at the start of 2024. Since starting we have built multiple websites, apps, and designs for various clients. We have also provided general IT-support for our clients, and we are always looking for new projects to take on. Visit us at texicon.no to learn more about us and our services!',
+        ],
+      },
+      {
+        title: 'Motivations',
+        content: [
+          'I started Texicon AS because I wanted to build something from the ground up. I wanted to create a company that would provide high-quality IT-consulting services to clients of various sizes, and I wanted to do it with a team of like-minded individuals who shared my passion for technology and innovation.',
+          'There was also the grudge that today\'s digital standards for quality were not met by most companies, many of which have more than enough resources for improvement, yet banks still use technology and languages from the 70s. Therefore, Texicon AS became a testament to show that it is \'not that hard\' to build digital products that meet the standards of user expectations.',
+        ],
+      }
     ],
     href: 'https://texicon.no/',
     lastUpdated: new Date('2025-03-24'),
@@ -28,7 +40,7 @@ export const workData: LinkCardProps[] = [
     title: 'Drift',
     shortDesc:
       'A voluntary position I have held since August 2024 at my student organization, TIHLDE. Drift is responsible for all IT systems such as websites, servers, virtual machines, hosting, networking, and databases, pretty much everything except TIHLDE\'s main website (tihlde.org).',
-    body: [],
+    chapters: [],
     href: 'https://tihlde.org/grupper/drift/',
     lastUpdated: new Date('2025-03-24'),
   },
@@ -37,7 +49,7 @@ export const workData: LinkCardProps[] = [
     title: 'IT-komiteen',
     shortDesc:
       'Another voluntary position I held between September 2023 and March 2024 at Studentersamfundet i Trondhjem. IT-komiteen is responsible for all IT systems at Samfundet, such as websites, servers, server hardware, virtual machines, access cards, memberships, hosting, networking, IT-support, work-computers, and databases. I held the position of serveradministrator, managing seven servers running Debian.',
-    body: [],
+    chapters: [],
     href: 'https://itk.samfundet.no/',
     lastUpdated: new Date('2025-03-24'),
   },
@@ -46,7 +58,7 @@ export const workData: LinkCardProps[] = [
     title: 'Bachelor\'s Degree in Software Engineering',
     shortDesc:
       'I am currently studying for a Bachelor\'s Degree in Software Engineering at NTNU, and I am expected to graduate in 2026.',
-    body: [],
+    chapters: [],
     href: 'https://www.ntnu.no/studier/bidata/systemutvikling',
     lastUpdated: new Date('2025-03-24'),
   },
