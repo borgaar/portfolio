@@ -16,9 +16,7 @@ USER builder
 
 COPY --chown=1001:1001 . .
 
-RUN pnpm i --frozen-lockfile
-
-RUN pnpm build
+RUN pnpm i --frozen-lockfile && pnpm build
 
 FROM base AS runner
 
