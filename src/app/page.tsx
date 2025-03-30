@@ -1,32 +1,48 @@
 'use client';
 
 import { useEffect, useRef} from 'react';
-import Hero from './components/hero';
-import Me from './components/me';
-import WorkGrid from './components/work-grid';
-import { useAnimationController } from './components/AnimationController';
-import { useAnimationState } from './contexts/AnimationContext';
+import { useAnimationState } from '@/contexts/AnimationContext';
+import Hero from './components/home/Hero';
+import WorkGrid from './components/articles/WorkGrid';
+import { useAnimationController } from '@/controllers/animationController';
+import Me from './components/home/Me';
 
 export default function Home() {
   const workSectionRef = useRef<HTMLDivElement>(null);
 
-  const { playSequence, resetAll } = useAnimationController();
+  const { playSequence, isRunningRef } = useAnimationController();
   const showPsst = useAnimationState('psst');
 
   useEffect(() => {
+    if (isRunningRef.current) return;
+
     const sequence = [
       { id: 'hero', delay: 920 },
-      { id: 'click me', delay: 1500 },
-      { id: 'image', delay: 500 },
       { id: 'psst', delay: 0 },
       { id: 'work', delay: 0 },
+      { id: 'image', delay: 500 },
       { id: 'navbar', delay: 0 },
       { id: 'email', delay: 1500 },
       { id: 'other visuals', delay: 0 },
     ];
-    
-    playSequence(sequence, 7200);
-  }, [playSequence, resetAll]);
+
+    window.addEventListener('scroll', () => playSequence(sequence));
+
+    const shouldInstantPlay = sessionStorage.getItem('sameSession') === 'true';
+
+    if (shouldInstantPlay) {
+      playSequence(sequence);
+    } else {
+      sessionStorage.setItem('sameSession', 'true');
+      const timeoutId = setTimeout(() => {
+        playSequence(sequence);
+      }, 7200);
+      
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [playSequence, isRunningRef]);
 
   const scrollToWork = (e: { preventDefault: () => void }) => {
     e.preventDefault();

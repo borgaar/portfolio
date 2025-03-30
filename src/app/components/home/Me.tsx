@@ -1,6 +1,6 @@
 'use client';
+import { useAnimationState } from '@/contexts/AnimationContext';
 import Image from 'next/image';
-import { useAnimationState } from '../contexts/AnimationContext';
 
 export default function Me() {
   const isVisible = useAnimationState('other visuals');

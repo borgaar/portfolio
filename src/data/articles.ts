@@ -11,9 +11,9 @@ export interface LinkCardProps {
   lastUpdated: Date;
 }
 
-export const workData: LinkCardProps[] = [
+export const articleData: LinkCardProps[] = [
   {
-    image: '/work/texicon.png',
+    image: '/articles/texicon.png',
     title: 'Texicon AS',
     altTitle: '/* building a company from the ground up */',
     shortDesc:
@@ -36,7 +36,7 @@ export const workData: LinkCardProps[] = [
     lastUpdated: new Date('2025-03-24'),
   },
   {
-    image: '/work/drift.png',
+    image: '/articles/drift.png',
     title: 'Drift',
     shortDesc:
       'A voluntary position I have held since August 2024 at my student organization, TIHLDE. Drift is responsible for all IT systems such as websites, servers, virtual machines, hosting, networking, and databases, pretty much everything except TIHLDE\'s main website (tihlde.org).',
@@ -45,7 +45,7 @@ export const workData: LinkCardProps[] = [
     lastUpdated: new Date('2025-03-24'),
   },
   {
-    image: '/work/itk.png',
+    image: '/articles/itk.png',
     title: 'IT-komiteen',
     shortDesc:
       'Another voluntary position I held between September 2023 and March 2024 at Studentersamfundet i Trondhjem. IT-komiteen is responsible for all IT systems at Samfundet, such as websites, servers, server hardware, virtual machines, access cards, memberships, hosting, networking, IT-support, work-computers, and databases. I held the position of serveradministrator, managing seven servers running Debian.',
@@ -54,7 +54,7 @@ export const workData: LinkCardProps[] = [
     lastUpdated: new Date('2025-03-24'),
   },
   {
-    image: '/work/ntnu.png',
+    image: '/articles/ntnu.png',
     title: 'Bachelor\'s Degree in Software Engineering',
     shortDesc:
       'I am currently studying for a Bachelor\'s Degree in Software Engineering at NTNU, and I am expected to graduate in 2026.',

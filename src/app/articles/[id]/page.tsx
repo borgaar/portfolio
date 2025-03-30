@@ -1,13 +1,13 @@
-import PageContainer from '@/app/components/page-container';
-import { workData } from '@/app/lib/work-data';
+import PageContainer from '@/app/components/layout/PageContainer';
+import { articleData } from '@/data/articles';
 import Link from 'next/link';
 
 export default async function Page({ params }: { params: Promise<{ id: number }> }) {
-  const { title, altTitle, chapters } = workData[(await params).id];
+  const { title, altTitle, chapters } = articleData[(await params).id];
 
   return (
     <PageContainer>
-      <div className='flex mx-auto flex-col items-center w-3xl my-8'>
+      <div className='flex mx-auto flex-col items-center px-8 max-w-3xl my-8'>
         <h1 className='mt-8 text-5xl text-neutral-100'>{title}</h1>
         <h1 className='mt-2 text-2xl text-neutral-500'>{altTitle}</h1>
         {chapters.map((chapter, index) => (

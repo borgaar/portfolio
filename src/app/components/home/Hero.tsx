@@ -1,7 +1,7 @@
 'use client';
-import PageContainer from './page-container';
 import { ReactTyped } from 'react-typed';
-import { useAnimationState } from '../contexts/AnimationContext';
+import PageContainer from '../layout/PageContainer';
+import { useAnimationState } from '@/contexts/AnimationContext';
 
 export default function Hero() {
   const heroText = useAnimationState('hero');

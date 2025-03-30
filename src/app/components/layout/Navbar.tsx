@@ -1,6 +1,6 @@
 'use client';
+import { useAnimationState } from '@/contexts/AnimationContext';
 import { Github } from 'lucide-react';
-import { useAnimationState } from '../contexts/AnimationContext';
 
 export default function Navbar() {
   const isVisible = useAnimationState('navbar');

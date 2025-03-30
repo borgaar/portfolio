@@ -1,8 +1,9 @@
 'use client';
-import { workData } from '../lib/work-data';
-import WorkCard from './work-card';
-import PageContainer from './page-container';
-import { useAnimationState } from '../contexts/AnimationContext';
+
+import { useAnimationState } from '@/contexts/AnimationContext';
+import PageContainer from '../layout/PageContainer';
+import WorkCard from './WorkCard';
+import { articleData } from '@/data/articles';
 
 export default function WorkGrid() {
   const isVisible = useAnimationState('work');
@@ -14,7 +15,7 @@ export default function WorkGrid() {
           isVisible ? 'opacity-100' : 'opacity-0'
         } md:grid-cols-2 grid-cols-1 h-min mb-8 gap-8 lg:gap-4`}
       >
-        {workData.map((work, index) => (
+        {articleData.map((work, index) => (
           <WorkCard key={index} index={index} {...work} />
         ))}
       </div>

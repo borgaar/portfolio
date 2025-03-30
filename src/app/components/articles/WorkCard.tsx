@@ -1,5 +1,5 @@
+import { LinkCardProps } from '@/data/articles';
 import Image from 'next/image';
-import { LinkCardProps } from '../lib/work-data';
 
 export default function WorkCard({
   image,
@@ -20,6 +20,7 @@ export default function WorkCard({
           src={image}
           alt={title}
           fill
+          sizes='(50vw)'
           className="rounded-lg object-cover"
           priority
         />

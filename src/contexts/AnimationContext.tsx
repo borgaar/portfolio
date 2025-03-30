@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useCallback } from 'react';
 
 type AnimationId = string;
 
@@ -38,12 +38,12 @@ export const AnimationProvider: React.FC<AnimationProviderProps> = ({ children }
     }));
   };
 
-  const triggerAnimation = (id: AnimationId) => {
+  const triggerAnimation = useCallback((id: AnimationId) => {
     setAnimationStates(prev => ({
       ...prev,
       [id]: true
     }));
-  };
+  }, []);
 
   const resetAnimation = (id: AnimationId) => {
     setAnimationStates(prev => ({

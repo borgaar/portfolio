@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
-import Navbar from './components/navbar';
-import { AnimationProvider } from './contexts/AnimationContext';
+import { AnimationProvider } from '@/contexts/AnimationContext';
+import Navbar from './components/layout/Navbar';
 
 const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
