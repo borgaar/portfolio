@@ -5,13 +5,15 @@ export default function WorkCard({
   image,
   title,
   shortDesc: description,
+  href,
   lastUpdated,
   index,
 }: Readonly<LinkCardProps> & {index: number}) {
   return (
     <a
-      href={'/articles/' + index}
+      href={href ?? '/articles/' + index}
       rel="noopener noreferrer"
+      target={href ? '_blank' : '_self'}
       className="flex flex-col h-full bg-neutral-900 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
       <div className="relative w-full h-64">

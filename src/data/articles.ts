@@ -7,7 +7,7 @@ export interface LinkCardProps {
     title?: string;
     content: string[];
   }[];
-  href: string;
+  href?: string;
   lastUpdated: Date;
 }
 
@@ -32,7 +32,6 @@ export const articleData: LinkCardProps[] = [
         ],
       }
     ],
-    href: 'https://texicon.no/',
     lastUpdated: new Date('2025-03-24'),
   },
   {
