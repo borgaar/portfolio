@@ -1,35 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { animationStream, triggerStream } from './hero';
-import { ANIMATION_DELAY } from '../lib/constants';
+import { useAnimationState } from '../contexts/AnimationContext';
 
 export default function Me() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [slideUp, setSlideUp] = useState(false);
-  const [showClickMe, setShowClickMe] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      handleStream();
-    });
-
-    const handleStream = async () => {
-      for await (const trigger of animationStream()) {
-        if (trigger === 'IMAGE') {
-          setSlideUp(true);
-        } else if (trigger === 'CLICK_ME') {
-          setShowClickMe(true);
-        } else if (trigger === 'ME_ELEMENT') {
-          setIsVisible(true);
-        }
-      }
-    };
-
-    setTimeout(() => {
-      handleStream();
-    }, ANIMATION_DELAY);
-  }, []);
+  const isVisible = useAnimationState('other visuals');
+  const slideUp = useAnimationState('image');
+  const showClickMe = useAnimationState('click me');
 
   return (
     <div
@@ -67,7 +43,7 @@ export default function Me() {
           &lt;!-- Passion drives quality --&gt;
         </div>
         <i className="text-neutral-500">
-          <span className="text-neutral-700">/*</span> Every day I strive for
+          <span className="text-neutral-700">\/*</span> Every day I strive for
           perfection in my work.
           <br />
           With true passion for creation through code, I am always learning and

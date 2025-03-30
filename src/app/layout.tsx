@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/navbar';
+import { AnimationProvider } from './contexts/AnimationContext';
 
 const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
@@ -20,10 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="relative scrollbar-none">
-      <body className={`${robotoMono.className} antialiased`}>
-        <Navbar />
-        {children}
-      </body>
+      <AnimationProvider>
+        <body className={`${robotoMono.className} antialiased`}>
+          <Navbar />
+          {children}
+        </body>
+      </AnimationProvider>
     </html>
   );
 }

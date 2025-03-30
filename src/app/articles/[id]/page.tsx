@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
           </div>
         ))}
         <div className='flex mt-8 text-neutral-600 w-full'>
-          <Link href='/'>&lt;- Go Back</Link>
+          <Link href='/#work'>&lt;- Go Back</Link>
         </div>
       </div>
     </PageContainer>
