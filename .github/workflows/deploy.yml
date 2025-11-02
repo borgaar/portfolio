@@ -32,8 +32,10 @@ jobs:
           PROXY_USER: ${{ vars.PROXY_USER }}
           HOST: ${{ vars.HOST }}
           USER: ${{ vars.USER }}
-          WORKING_DIRECTORY: ${{ vars.WORKING_DIRECTORY }}
+          WORKING_DIR: ${{ vars.WORKING_DIR }}
         run: |
+          set -euo pipefail
+
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/key
 
@@ -41,7 +43,7 @@ jobs:
 
             set -euo pipefail
 
-            cd "$WORKING_DIRECTORY"
+            cd "$WORKING_DIR"
 
             git fetch
             git reset --hard origin/PRODUCTION
