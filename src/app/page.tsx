@@ -17,15 +17,15 @@ export default function Home() {
     if (isRunningRef.current) return;
 
     const sequence = [
-      { id: 'hero', delay: 920 },
-      { id: 'psst', delay: 0 },
-      { id: 'work', delay: 0 },
-      { id: 'image', delay: 500 },
-      { id: 'navbar', delay: 0 },
-      { id: 'email', delay: 1500 },
-      { id: 'other visuals', delay: 0 },
-      { id: 'box', delay: 1500 },
-      { id: 'box-glow', delay: 1700 },
+      { id: 'hero', delay: 0 },
+      { id: 'psst', delay: 1500 },
+      { id: 'work', delay: 250 },
+      { id: 'image', delay: 2000 },
+      { id: 'navbar', delay: 2000 },
+      { id: 'email', delay: 2000 },
+      { id: 'other visuals', delay: 1500 },
+      { id: 'box', delay: 500 },
+      { id: 'box-glow', delay: 500 },
     ];
 
     window.addEventListener('scroll', () => playSequence(sequence));

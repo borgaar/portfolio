@@ -23,7 +23,7 @@ export default function Me() {
           <div className="relative group overflow-hidden">
             <div className="absolute h-full w-full border-b-2 border-white bg-linear-to-t z-10 from-neutral-300/10 via-transparent via-5% to-transparent " />
             <Image
-              className={`${slideUp || 'translate-y-400'
+              className={`${slideUp || 'scale-[0.9] translate-y-5'
                 } duration-1000 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
               src={'/me.png'}
               alt="A photo of a very handsome young fella"
