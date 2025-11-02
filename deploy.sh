@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-DOMAIN="borgarbarland.com"
+DOMAIN="borgar.dev"
 PORT=2808
 
 COMMIT_HASH=$(git rev-parse --short HEAD)
