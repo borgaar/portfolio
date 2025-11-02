@@ -10,8 +10,6 @@
 
 </div>
 
----
-
 ## 📖 About
 
 This is my portfolio website built with **modern web technologies** to showcase my projects, articles, and professional experience.
