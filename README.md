@@ -119,6 +119,6 @@ All bug reports are welcome and appreciated! 🙏
 
 **Made with care️ & passion by Borgar Barland**
 
-_© 2025 All rights reserved_
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
