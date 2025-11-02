@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: Promise<{ key: string }
           <div key={index} className='mt-4 text-neutral-100'>
             {chapter.title && <h2 className='text-2xl pt-2 font-bold'>{chapter.title}</h2>}
             {chapter.content.map((paragraph, index) => (
-              <p key={index} className='mt-4 text-lg whitespace-pre-wrap text-neutral-300'>
+              <p key={index} className='mt-4 text-lg md:whitespace-pre-wrap text-neutral-300'>
                 {parse(paragraph)}
               </p>
             ))}

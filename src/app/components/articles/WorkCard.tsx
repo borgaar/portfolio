@@ -16,7 +16,7 @@ export default function WorkCard({
       href={href ?? '/articles/' + articleKey}
       rel="noopener noreferrer"
       target={href ? '_blank' : '_self'}
-      className="flex flex-col h-full bg-neutral-900 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
+      className="flex flex-col h-full my-2 md:my-0 md:px-2 bg-neutral-800 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
       <div className="relative w-full h-64">
         <div className="absolute inset-0 bg-transparent lg:bg-black/40 z-10 rounded-lg transition-opacity opacity-100 group-hover:opacity-0" />
@@ -34,14 +34,16 @@ export default function WorkCard({
           <h2 className="text-xl font-semibold">{title}</h2>
           <span className="text-md min-w-34 text-neutral-600 font-semibold text-right">{altTitle}</span>
         </div>
-        <p className="text-md grow">{description}</p>
-        <div className='flex justify-between'>
-          <h2 className="text-sm group-hover:opacity-100 opacity-0 transition-opacity text-center text-neutral-600">
-            {timePeriod ? formatDateRange(timePeriod) : ''}
-          </h2>
-          <p className="text-sm group-hover:opacity-100 opacity-0 transition-opacity text-center text-neutral-600">
-            updated: {lastUpdated.toLocaleDateString()}
-          </p>
+        <div className='md:max-h-0 group-hover:max-h-96 overflow-clip transition-all duration-500'>
+          <p className="text-md grow">{description}</p>
+          <div className='flex justify-between md:pb-6 pt-4 group-hover:opacity-100 md:opacity-0 transition-opacity'>
+            <h2 className="text-sm text-center text-neutral-600">
+              {timePeriod ? formatDateRange(timePeriod) : ''}
+            </h2>
+            <p className="text-sm text-center text-neutral-600">
+              updated: {lastUpdated.toLocaleDateString()}
+            </p>
+          </div>
         </div>
       </div>
     </a>

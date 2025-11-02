@@ -31,7 +31,7 @@ const articles = [
           'Texicon AS is the IT-consulting company I co-founded at the start of 2024, \
           being a developer and board member through June 2025. We have built multiple websites, apps, and designs for various customers, and also \
           provided general IT-support for our clients. Texicon is always looking \
-          for new projects to take on, so contact us at <a className="text-blue-400" href="https://texicon.no" target="_blank" rel="noopener noreferrer">texicon.no</a> to learn more about us \
+          for new projects to take on, so contact us at <a className="text-blue-300" href="https://texicon.no" target="_blank" rel="noopener noreferrer">texicon.no</a> to learn more about us \
           and our services!',
         ],
       },
@@ -76,6 +76,39 @@ const articles = [
           'This practical experience has complemented my academic studies and has provided me with a more well-rounded understanding of the field. It has also helped me to develop problem-solving skills and the ability to work effectively in a team environment.',
         ]
         
+      }
+    ],
+    lastUpdated: new Date('2025-11-01'),
+  } as LinkCardProps,
+  {
+    image: '/articles/start-hack-2025.jpg',
+    articleKey: 'start-hack-2025',
+    title: 'Participant of START Hack 2025',
+    altTitle: '36h Hackathon',
+    time: new Date('2025-03-01'),
+    shortDesc:
+      'START Hack 2025 was a 36-hour hackathon organized by START Global, where teams from all around the world competed to develop an innovative software for multiple companies and organizations, including (but not limited to) the United Nations, Virgin, Belimo and Syngenta.',
+    chapters: [
+      {
+        content: [
+          'START Hack 2025 was an exhilarating 36-hour hackathon organized by START Global, bringing together teams from around the world to develop innovative software solutions for a variety of companies and organizations, including (but not limited to) the United Nations, Virgin, Belimo, and Syngenta.',
+          'This trip was our first-place prize from winning Start Code 2024! Read more about Start Code 2024 <a className="text-blue-300" href="/articles/start-code-2024">here</a>.',
+        ]
+      },
+      {
+        title: 'The experience',
+        content: [
+          'Participating in START Hack 2025 was an incredible experience that allowed me to meet with talented individuals from diverse backgrounds. The intense 36-hour timeframe pushed us to think creatively and work efficiently under pressure.',
+          'Although we did not win, the experience provided valuable insights into the hackathon process and the importance of teamwork and effective communication. It also reinforced my passion for software development and innovation.',
+        ]
+      },
+      {
+        title: 'What did we make?',
+        content:[
+          'As a participant representing Texicon AS, our team was tasked with creating a solution for Virgin, focusing on enhancing communication and collaboration among their global teams.',
+          'We conducted extensive research to understand the unique challenges faced by Virgin\'s teams and developed a prototype that integrated various communication tools into a single platform, with a world map interface to visualize team locations and facilitate real-time collaboration.',
+          'Check out the application on <a className="text-blue-300" href="https://github.com/borgaar/virgin-initiatives" target="_blank">the GitHub Repo</a>, or a video walkthrough of the application <a className="text-blue-300" href="https://www.youtube.com/watch?v=oSvcWTRjcOE" target="_blank">here</a>!'
+        ]
       }
     ],
     lastUpdated: new Date('2025-11-01'),
@@ -128,7 +161,7 @@ const articles = [
       {
         content: [
           'Start Code 2024 was an exhilarating 48-hour hackathon organized by Start NTNU, where over 20 teams of students competed to develop innovative software solutions to real-world challenges. This year, the case was provided by Enmo AS, a startup focused on enhancing the efficiency of solar energy systems through their BatteryBrain technology.',
-          'Check out the application on <a className="text-blue-500" href="https://github.com/AleksanderEvensen/StartCode-StashPoppers" target="_blank">the GitHub Repo</a>!'
+          'Check out the application on <a className="text-blue-300" href="https://github.com/AleksanderEvensen/StartCode-StashPoppers" target="_blank">the GitHub Repo</a>!'
         ]
       },
       {
@@ -141,8 +174,9 @@ const articles = [
       {
         title: 'The results...',
         content: [
-          'After an intense 48 hours of brainstorming, coding, energy-drink consuming, and testing, our team emerged victorious! We were honored to receive the first-place award for our well-rounded feature-packed solution.',
-          'This also landed me a Summer Internship at Enmo AS in the summer of 2025, where I was lead-developer for a new domain within the BatteryBrain technology. You can read more about my work at Enmo AS <a className="text-blue-500" href="/articles/enmo-summer-internship-2025">here</a>.',
+          'After an intense 48 hours of brainstorming, coding, energy-drink consuming, and testing, our team emerged victorious! We were honored to receive the first-place award for our well-rounded feature-packed solution. The first-place prize was a sponsored trip to St. Gallen, Switzerland, to attend START Hack in April 2025, where we got to compete on the world stage! Safe to say we did not win this one...',
+          'You can read more about START Hack 2025 <a className="text-blue-300" href="/articles/start-hack-2025">here</a>.',
+          'This also landed me a Summer Internship at Enmo AS in the summer of 2025, where I was lead-developer for a new domain within the BatteryBrain technology. You can read more about my work at Enmo AS <a className="text-blue-300" href="/articles/enmo-summer-internship-2025">here</a>.',
         ]
       },
       {
@@ -168,7 +202,7 @@ const articles = [
       {
         content: [
           'Start Code 2025 was a thrilling 48-hour hackathon organized by Start NTNU, where over 15 teams of students competed to develop innovative software solutions to real-world challenges. This year, the case was provided by Reitan AS, a leading retail company in Norway.',
-          'Check out the application on <a className="text-blue-500" href="https://github.com/borgaar/start-code-2025">the GitHub Repo</a>!'
+          'Check out the application on <a className="text-blue-300" href="https://github.com/borgaar/start-code-2025">the GitHub Repo</a>!'
         ],
       },
       {

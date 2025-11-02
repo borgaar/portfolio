@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <div
-      className={`flex ${heroText || 'translate-y-[30vh]'} flex-col items-center duration-600 transition-transform justify-center pt-20 lg:pt-24 bg-secondary text-xl lg:text-4xl text-neutral-200`}
+      className={`flex ${heroText || 'translate-y-[30vh]'} flex-col items-center duration-600 transition-transform justify-center pt-12 md:pt-24 bg-secondary text-xl lg:text-4xl text-neutral-200`}
     >
       <PageContainer>
         <ReactTyped

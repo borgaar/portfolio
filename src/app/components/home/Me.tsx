@@ -5,10 +5,12 @@ import Image from 'next/image';
 export default function Me() {
   const isVisible = useAnimationState('other visuals');
   const slideUp = useAnimationState('image');
+  const showBox = useAnimationState('box');
+  const showBoxGlow = useAnimationState('box-glow');
   const showClickMe = useAnimationState('click me');
 
   return (
-    <div className={`bg-neutral-900 mx-auto max-w-2xl pb-16 pt-6 transition-all rounded-4xl ${isVisible ? 'opacity-100' : 'opacity-0'} border-2 border-white shadow-[0_0_30px_rgba(255,255,255,0.3)]`}>
+    <div className={`bg-neutral-900 mx-6 md:mx-auto max-w-2xl pb-16 pt-6 md:mb-0 mb-16 transition-all duration-1000 rounded-4xl ${showBoxGlow ? 'shadow-[0_0_30px_rgba(255,255,255,0.5)] border-4' : ''} ${showBox ? 'border-white' : 'bg-transparent'}`}>
       <div
         className={`flex flex-col items-center justify-center transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0'
           } duration-1500`}
@@ -42,9 +44,7 @@ export default function Me() {
           </div>
           <i className="text-neutral-500">
             <span className="text-neutral-700">{'/*'}</span> Every day I strive for
-            perfection in my work.
-            <br />
-            With true passion for innovation through code, I am always learning and
+            perfection in my work. With true passion for innovation through code, I am always learning and
             developing my skills.{' '}
             <span className="text-neutral-700">*/</span>
           </i>

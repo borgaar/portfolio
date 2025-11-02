@@ -24,7 +24,7 @@ export default function Navbar() {
       className={'fixed flex justify-start  top-0 left-0 right-0 z-50 '}
     >
       <a
-        href="https://github.com/borgaar/portfolio"
+        href="https://github.com/borgaar"
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center ${hasScrolled ? 'opacity-0' : isVisible ? 'hover:opacity-100 opacity-25' : 'opacity-0'}  duration-1000 `}
@@ -38,7 +38,7 @@ export default function Navbar() {
           height={32}
           className="mr-3 ml-4 my-4"
         />
-        <span className="text-white">&lt; free spaghetti recipe</span>
+        <span className="text-white">&lt; free spaghetti recipes</span>
       </a>
     </nav>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import { useAnimationState } from '@/contexts/AnimationContext';
 import { useAnimationController } from '@/controllers/animationController';
 import Hero from '@/app/components/home/Hero';
@@ -24,6 +24,8 @@ export default function Home() {
       { id: 'navbar', delay: 0 },
       { id: 'email', delay: 1500 },
       { id: 'other visuals', delay: 0 },
+      { id: 'box', delay: 1500 },
+      { id: 'box-glow', delay: 1700 },
     ];
 
     window.addEventListener('scroll', () => playSequence(sequence));
@@ -36,8 +38,8 @@ export default function Home() {
       sessionStorage.setItem('sameSession', 'true');
       const timeoutId = setTimeout(() => {
         playSequence(sequence);
-      }, 7200);
-      
+      }, 7500);
+
       return () => {
         clearTimeout(timeoutId);
       };
@@ -64,7 +66,7 @@ export default function Home() {
         </div>
         <button
           onClick={scrollToWork}
-          className={`flex pb-8 ${ showPsst ? 'opacity-100' : 'opacity-0'
+          className={`flex pb-8 ${showPsst ? 'opacity-100' : 'opacity-0'
             } text-neutral-700 lg:text-neutral-800 justify-center duration-1000 transition-opacity cursor-pointer text-[12px] bg-transparent border-none`}
         >
           psst! more stuff down here..
