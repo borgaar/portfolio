@@ -16,10 +16,10 @@ export default function WorkCard({
       href={href ?? '/articles/' + articleKey}
       rel="noopener noreferrer"
       target={href ? '_blank' : '_self'}
-      className="flex flex-col h-full my-2 md:my-0 md:px-2 bg-neutral-800 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
+      className="flex flex-col h-full my-2 md:my-0 md:px-2 bg-neutral-800 md:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
     >
       <div className="relative w-full h-64">
-        <div className="absolute inset-0 bg-transparent lg:bg-black/40 z-10 rounded-lg transition-opacity opacity-100 group-hover:opacity-0" />
+        <div className="absolute inset-0 bg-transparent md:bg-black/40 z-10 rounded-lg transition-opacity opacity-100 group-hover:opacity-0" />
         <Image
           src={image}
           alt={title}
