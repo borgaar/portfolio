@@ -8,7 +8,7 @@ export default function Me() {
   const showClickMe = useAnimationState('click me');
 
   return (
-    <div className={`bg-neutral-900 mx-auto max-w-2xl pb-16 pt-6 transition-all rounded-4xl ${isVisible ? 'opacity-100' : 'opacity-0'} border-2 border-white`}>
+    <div className={`bg-neutral-900 mx-auto max-w-2xl pb-16 pt-6 transition-all rounded-4xl ${isVisible ? 'opacity-100' : 'opacity-0'} border-2 border-white shadow-[0_0_30px_rgba(255,255,255,0.3)]`}>
       <div
         className={`flex flex-col items-center justify-center transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0'
           } duration-1500`}
@@ -25,8 +25,8 @@ export default function Me() {
                 } duration-1000 group-hover:scale-[1.06] opacity-100 lg:opacity-50 group-hover:opacity-100 transition-all`}
               src={'/me.png'}
               alt="A photo of a very handsome young fella"
-              height={500}
-              width={471}
+              height={471}
+              width={500}
             />
             <div
               className={`pt-5 ${showClickMe ? 'opacity-100' : 'opacity-0'

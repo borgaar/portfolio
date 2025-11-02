@@ -3,13 +3,13 @@ import { articleData } from '@/data/articles';
 import Link from 'next/link';
 import parse from 'html-react-parser';
 
-export default async function Page({ params }: { params: Promise<{ id: number }> }) {
-  const { title, altTitle, chapters } = articleData[(await params).id];
+export default async function Page({ params }: { params: Promise<{ key: string }> }) {
+  const { title, altTitle, chapters } = articleData.get((await params).key)!;
 
   return (
     <PageContainer>
       <div className='flex mx-auto flex-col items-center px-8 max-w-3xl my-8'>
-        <h1 className='mt-8 text-5xl text-neutral-100'>{title}</h1>
+        <h1 className='mt-8 text-5xl text-neutral-100 text-center'>{title}</h1>
         <h1 className='mt-4 text-2xl text-neutral-500'>{altTitle}</h1>
         {chapters.map((chapter, index) => (
           <div key={index} className='mt-4 text-neutral-100'>

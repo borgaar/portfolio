@@ -9,11 +9,11 @@ export default function WorkCard({
   shortDesc: description,
   href,
   lastUpdated,
-  index,
-}: Readonly<LinkCardProps> & { index: number }) {
+  articleKey,
+}: Readonly<LinkCardProps>) {
   return (
     <a
-      href={href ?? '/articles/' + index}
+      href={href ?? '/articles/' + articleKey}
       rel="noopener noreferrer"
       target={href ? '_blank' : '_self'}
       className="flex flex-col h-full bg-neutral-900 lg:bg-transparent rounded-lg transition-all hover:scale-[1.04] hover:z-20 relative group"
@@ -29,12 +29,12 @@ export default function WorkCard({
           priority
         />
       </div>
-      <div className="flex flex-col gap-4 p-4 justify-between">
+      <div className="flex flex-col grow gap-4 p-4 justify-between">
         <div className='flex justify-between items-center'>
           <h2 className="text-xl font-semibold">{title}</h2>
           <span className="text-md min-w-34 text-neutral-600 font-semibold text-right">{altTitle}</span>
         </div>
-        <p className="text-md">{description}</p>
+        <p className="text-md grow">{description}</p>
         <div className='flex justify-between'>
           <h2 className="text-sm group-hover:opacity-100 opacity-0 transition-opacity text-center text-neutral-600">
             {timePeriod ? formatDateRange(timePeriod) : ''}
