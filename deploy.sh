@@ -15,4 +15,4 @@ echo "-> Stopping and removing old container"
 docker rm -f $DOMAIN || true
 
 echo "-> Starting new container"
-docker run -p $PORT:3000 --name $DOMAIN --restart unless-stopped -d $IMAGE_NAME
+docker run -p $PORT:8080 --name $DOMAIN --restart unless-stopped -d $IMAGE_NAME
