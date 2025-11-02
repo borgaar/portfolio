@@ -2,10 +2,10 @@
 
 import { useEffect, useRef} from 'react';
 import { useAnimationState } from '@/contexts/AnimationContext';
-import Hero from './components/home/Hero';
-import WorkGrid from './components/articles/WorkGrid';
 import { useAnimationController } from '@/controllers/animationController';
-import Me from './components/home/Me';
+import Hero from '@/app/components/home/Hero';
+import Me from '@/app/components/home/Me';
+import WorkGrid from '@/app/components/articles/WorkGrid';
 
 export default function Home() {
   const workSectionRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div className="pb-10 scrollbar-none">
-      <div className="h-[100vh] flex flex-col">
+      <div className="h-screen flex flex-col">
         <Hero />
         <div className="my-auto">
           <Me />

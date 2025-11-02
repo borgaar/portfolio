@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Roboto_Mono } from 'next/font/google';
-import './globals.css';
 import { AnimationProvider } from '@/contexts/AnimationContext';
-import Navbar from './components/layout/Navbar';
+import '@/app/globals.css';
+import Navbar from '@/app/components/layout/Navbar';
 
 const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
@@ -12,6 +12,7 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: 'Borgar Barland',
   description: 'Generating software through passion and curiosity.',
+
 };
 
 export default function RootLayout({
