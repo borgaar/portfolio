@@ -28,10 +28,10 @@ export default function Hero() {
           className="font-bold"
         />
         <a
-          href="mailto:borgar@texicon.no"
+          href="mailto:mail@borgarbarland.com"
           className={`${showEmail ? 'opacity-100' : 'opacity-0'} opacity-0 text-neutral-500 hover:text-neutral-200 duration-1000 hover:scale-[1.02] text-sm pt-6 flex justify-center`}
         >
-          borgar@texicon.no
+          mail@borgarbarland.com
         </a>
       </PageContainer>
     </div>

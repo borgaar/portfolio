@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
-import { Roboto_Mono } from 'next/font/google';
+import { JetBrains_Mono, Roboto_Mono } from 'next/font/google';
 import { AnimationProvider } from '@/contexts/AnimationContext';
 import '@/app/globals.css';
 import Navbar from '@/app/components/layout/Navbar';
 
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-jet-brains-mono',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   title: 'Borgar Barland',
-  description: 'Generating software through passion and curiosity.',
+  description: 'Creating software through passion and curiosity.',
 
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative scrollbar-none">
       <AnimationProvider>
-        <body className={`${robotoMono.className} antialiased`}>
+        <body className={`${jetBrainsMono.className} antialiased`}>
           <Navbar />
           {children}
         </body>

@@ -4,11 +4,13 @@ import Image from 'next/image';
 export default function WorkCard({
   image,
   title,
+  altTitle,
+  time: timePeriod,
   shortDesc: description,
   href,
   lastUpdated,
   index,
-}: Readonly<LinkCardProps> & {index: number}) {
+}: Readonly<LinkCardProps> & { index: number }) {
   return (
     <a
       href={href ?? '/articles/' + index}
@@ -27,15 +29,39 @@ export default function WorkCard({
           priority
         />
       </div>
-      <div className="flex flex-col justify-between gap-4 p-4 flex-grow">
-        <div>
+      <div className="flex flex-col gap-4 p-4 justify-between">
+        <div className='flex justify-between items-center'>
           <h2 className="text-xl font-semibold">{title}</h2>
-          <p className="text-md mt-2">{description}</p>
+          <span className="text-md min-w-34 text-neutral-600 font-semibold text-right">{altTitle}</span>
         </div>
-        <p className="flex justify-end text-xs text-gray-500 mt-auto pt-2">
-          Last updated: {lastUpdated.toLocaleDateString()}
-        </p>
+        <p className="text-md">{description}</p>
+        <div className='flex justify-between'>
+          <h2 className="text-sm group-hover:opacity-100 opacity-0 transition-opacity text-center text-neutral-600">
+            {timePeriod ? formatDateRange(timePeriod) : ''}
+          </h2>
+          <p className="text-sm group-hover:opacity-100 opacity-0 transition-opacity text-center text-neutral-600">
+            updated: {lastUpdated.toLocaleDateString()}
+          </p>
+        </div>
       </div>
     </a>
   );
+}
+
+function formatDateRange(dates: LinkCardProps['time']): string {
+  if (Array.isArray(dates)) {
+    const [start, end] = dates;
+    const startDate = new Date(start);
+    const endDate = end ? new Date(end) : null;
+
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
+    const startStr = startDate.toLocaleDateString(undefined, options);
+    const endStr = endDate ? endDate.toLocaleDateString(undefined, options) : 'Today';
+
+    return `${startStr} - ${endStr}`;
+  } else {
+    const date = new Date(dates);
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short' };
+    return date.toLocaleDateString(undefined, options);
+  }
 }
