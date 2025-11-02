@@ -117,7 +117,7 @@ All bug reports are welcome and appreciated! 🙏
 
 <div align="center">
 
-**Made with ❤️ by Borgar Barland**
+**Made with care️ & passion by Borgar Barland**
 
 _© 2025 All rights reserved_
 
