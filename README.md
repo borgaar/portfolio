@@ -4,7 +4,7 @@
 
 ### _My personal portfolio website showcasing my work and projects_
 
-[![Live Site](https://img.shields.io/badge/🌐_Live_Site-borgarbarland.com-blue?style=for-the-badge)](https://borgarbarland.com)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-borgar.dev-blue?style=for-the-badge)](https://borgar.dev)
 
 ---
 
