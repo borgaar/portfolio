@@ -59,7 +59,7 @@ export default function Home() {
 
   return (
     <div className="pb-10 scrollbar-none">
-      <div className="h-screen flex flex-col">
+      <div className="h-screen min-h-[1080px] flex flex-col">
         <Hero />
         <div className="my-auto">
           <Me />
